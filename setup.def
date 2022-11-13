@@ -12,7 +12,7 @@ IncludeCmd: yes
     conda install --yes -c astropy jupyter  nb_conda_kernels matplotlib scipy 
     conda clean --index-cache --tarballs --packages --yes
     pip install psutil
-    
+    pip install astroquery, boto3
     #install center radon:
     wget https://github.com/seawander/centerRadon/archive/refs/tags/v1.0.tar.gz \
             && tar -xf v1.0.tar.gz\
@@ -33,6 +33,9 @@ IncludeCmd: yes
     git clone https://bitbucket.org/pyKLIP/pyklip.git\
                     &&    cd  pyklip\
                     && python setup.py develop
+    
+    %install poppy (for contrast curves)
+    pip install poppy 
     mkdir /data /resources
 
 %runscript
