@@ -40,3 +40,7 @@ to download data:
         with open(filename, 'wb') as fp: 
             ftps.retrbinary('RETR {}'.format(filename), fp.write)
 ```
+
+glossary:
+
+“NFR” = Number of Frames
