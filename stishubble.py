@@ -1846,21 +1846,21 @@ class stishubbleData(Data):
         filenames  = FRFNL
         if 1 :
             log.debug("torRA              :  [")
-            for tr in torRA : log.debug(tr+", ") # SCIcanvas 
+            for tr in torRA : log.debug(str(tr)+", ") # SCIcanvas 
             log.debug("]")                    
             log.debug("input_SCI          :  [")
-            for fr in input_SCI : log.debug(fr[120][140]+", " ) # SCIcanvas 
+            for fr in input_SCI : log.debug(str(fr[120][140])+", " ) # SCIcanvas 
             log.debug("]")    
             log.debug("input_ERR          :  [")
-            for fr in input_ERR : log.debug(fr[120][140]+ ", ") # SCIcanvas 
+            for fr in input_ERR : log.debug(str(fr[120][140])+ ", ") # SCIcanvas 
             log.debug("]")    
             log.debug("centers            :  [" )
-            for cen in centers   : log.debug("("+f2f2(cen)+  ")")
+            for cen in centers   : log.debug("("+str(f2f2(cen))+  ")")
             log.debug("]")
             log.debug("parangs            :  [")
-            for pa in parangs    : log.debug(f2(pa))
+            for pa in parangs    : log.debug(str(f2(pa)))
             log.debug("]")
-            log.debug("filenames          : :"+ filenames)
+            log.debug("filenames          : :"+ str( filenames))
 
 
 
