@@ -1,0 +1,36 @@
+BootStrap: docker
+From: jupyter/base-notebook
+
+%post
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# this will install all necessary packages and prepare the container
+    apt-get -y update --allow-releaseinfo-change
+    apt-get -y install make gcc zlib1g-dev libncurses5-dev git wget curl
+    pip install numpy==1.21.5 matplotlib==3.5.1 scipy==1.7.3 pandas==1.4.2 astropy poppy
+    pip install multiprocess NonnegMFPy
+        
+    #install non-negative matrix PSF subtraction packages:
+    cd /tmp/
+    wget https://github.com/seawander/nmf_imaging/archive/refs/tags/v2.0.tar.gz \
+                    && tar -xf v2.0.tar.gz \
+                    && cd nmf_imaging-2.0 \
+                    && python setup.py install
+               
+    #install latest version of pyKLIP
+    cd /tmp/
+    git clone https://bitbucket.org/pyKLIP/pyklip.git \
+                   && cd  pyklip \
+                   && python setup.py develop
+    
+    #install center radon:
+    cd /tmp/
+    wget https://github.com/seawander/centerRadon/archive/refs/tags/v1.0.tar.gz \
+            && tar -xf v1.0.tar.gz \
+            && cd centerRadon-1.0 \
+            && python setup.py develop
+
+
+%environment
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# This sets global environment variables for anything run within the container
+export SINGULARITY_BIND="/path/to/reduce50coron:/mnt" 
