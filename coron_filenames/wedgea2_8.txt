@@ -1,0 +1,6 @@
+o3y001110_flt.fits
+o3y0020z0_flt.fits
+o40601050_flt.fits
+o4g801080_flt.fits
+o3y0010z0_flt.fits
+o3y002110_flt.fits

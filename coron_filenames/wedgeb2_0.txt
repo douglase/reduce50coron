@@ -1,0 +1,9 @@
+obkq06010_flt.fits
+obkq05010_flt.fits
+obkq08010_flt.fits
+obkq03010_flt.fits
+obkq04010_flt.fits
+obkq07010_flt.fits
+o4g801060_flt.fits
+obkq01010_flt.fits
+obkq02010_flt.fits
